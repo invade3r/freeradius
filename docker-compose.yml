@@ -4,6 +4,7 @@ services:
   freeradius:
     image: freeradius/freeradius-server:latest
     volumes:
+      - "${PWD}/tls:/etc/raddb/sites-enabled/tls:ro"
       - "${PWD}/eap:/etc/raddb/mods-enabled/eap:ro"
       - "${PWD}/clients.conf:/etc/raddb/clients.conf:ro"
       - "${PWD}/certs/:/etc/raddb/certs/:ro"
