@@ -7,9 +7,11 @@ services:
       - "${PWD}/eap:/etc/raddb/mods-enabled/eap:ro"
       - "${PWD}/clients.conf:/etc/raddb/clients.conf:ro"
       - "${PWD}/certs/:/etc/raddb/certs/:ro"
+      - "${PWD}/radius.log:/var/log/freeradius/radius.log:rw"
       #- "${PWD}/raddb/authorize:/etc/raddb/mods-config/files/authorize:ro"
       #- "${PWD}/logs/:/opt/var/log/radius/radacct/:rw"
     ports:
       - "1812-1813:1812-1813/udp"
-    command: ["radiusd", "-X", "-t"] # Debug mode with colour
+      - "2083:2083/tcp"
+    command: ["radiusd", "-xxx"]
     restart: unless-stopped
