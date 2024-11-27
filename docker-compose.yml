@@ -2,7 +2,7 @@ version: '3.2'
 
 services:
   freeradius:
-    image: freeradius/freeradius-server:latest
+    image: freeradius/freeradius-server:3.2.3
     volumes:
       - "${PWD}/tls:/etc/raddb/sites-enabled/tls:ro"
       - "${PWD}/eap:/etc/raddb/mods-enabled/eap:ro"
