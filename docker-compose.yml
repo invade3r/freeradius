@@ -4,7 +4,7 @@ services:
   freeradius:
     image: freeradius/freeradius-server:3.2.3
     volumes:
-      - "${PWD}/tls:/etc/raddb/sites-enabled/tls:ro"
+      #- "${PWD}/tls:/etc/raddb/sites-enabled/tls:ro" #Used with radsec
       - "${PWD}/eap:/etc/raddb/mods-enabled/eap:ro"
       - "${PWD}/clients.conf:/etc/raddb/clients.conf:ro"
       - "${PWD}/certs/:/etc/raddb/certs/:ro"
@@ -13,6 +13,6 @@ services:
       #- "${PWD}/logs/:/opt/var/log/radius/radacct/:rw"
     ports:
       - "1812-1813:1812-1813/udp"
-      - "2083:2083/tcp"
+      #- "2083:2083/tcp" #Used with radsec
     command: ["radiusd", "-xxx"]
     restart: unless-stopped
