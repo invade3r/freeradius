@@ -24,7 +24,7 @@ eap {
         #  then that EAP type takes precedence over the
         #  default type configured here.
         #
-        default_eap_type = md5
+        default_eap_type = tls
 
         #  A list is maintained to correlate EAP-Response
         #  packets with EAP-Request packets.  After a
@@ -175,7 +175,7 @@ eap {
         #  authenticate via EAP-TLS!  This is likely not what you want.
         #
         tls-config tls-common {
-                private_key_password = whatever
+                private_key_password = your_key_pw
                 private_key_file = /etc/raddb/certs/server.pem
 
                 #  If Private key & Certificate are located in
