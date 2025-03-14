@@ -1,5 +1,3 @@
-version: '3.2'
-
 services:
   freeradius:
     image: freeradius/freeradius-server:3.2.3
