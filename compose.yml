@@ -1,6 +1,9 @@
 services:
   freeradius:
-    image: freeradius/freeradius-server:3.2.3
+    image: freeradius/freeradius-server:3.2.7
+    container_name: freeradius
+    environment:
+      - TZ=Europe/Stockholm
     volumes:
       #- "${PWD}/tls:/etc/raddb/sites-enabled/tls:ro" #Used with radsec
       - "${PWD}/eap:/etc/raddb/mods-enabled/eap:ro"
