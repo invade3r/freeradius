@@ -77,8 +77,8 @@ eap {
         #  for wireless connections.  It is insecure, and does
         #  not provide for dynamic WEP keys.
         #
-        md5 {
-        }
+        #md5 {
+        #}
 
 
         #  EAP-pwd -- secure password-based authentication
